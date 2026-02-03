@@ -1,0 +1,116 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+    
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+     font-family: 'Poppins', sans-serif;
+     
+      /* background-color: aqua; */
+}
+
+#main{
+
+    width: 100%;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+     
+    height: 100%;
+   
+}
+
+#formdiv{
+    /* border: 2px solid black; */
+    max-width: 25%;
+    position: absolute;
+    left: 42%;
+    top: 8%;
+    padding: 20px;
+    border-radius: 8px;
+ box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  background: #fff;
+     
+}
+h1{
+    margin-bottom: 10px;
+    margin-left: 8px;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #444;
+      text-align: left;
+     
+    }
+
+    button {
+      margin-top: 15px;
+      margin-left: 110px;
+      padding: 5px;
+      /* background: linear-gradient(135deg, #6e8efb, #a777e3); */
+      background-color: #444;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(110, 142, 251, 0.4);
+    }
+   
+  form input {
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+ label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #444;
+      text-align: left;
+    }
+
+    .card {
+      background: #fff;
+      width: 320px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      padding: 20px;
+      position: absolute;
+      top: 50%;
+      left: 40%;
+    }
+  img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #4CAF50;
+      margin-bottom: 15px;
+    }
+    .card h2 {
+      margin: 10px 0 5px;
+      font-size: 22px;
+    }
+    .card h4 {
+      margin: 0;
+      color: #666;
+      font-weight: normal;
+    }
+    .card p {
+      font-size: 14px;
+      color: #333;
+      margin-top: 15px;
+      line-height: 1.4;
+    }
