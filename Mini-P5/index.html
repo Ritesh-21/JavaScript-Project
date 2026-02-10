@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Email & Password Validator</title>
+  <style>
+    :root {
+      --warm1: #0b9bf5;   /* amber */
+      --warm2: #b4f3fa;   /* orange */
+      --warm3: #b2e2ef;   /* peach */
+      --bg: #fff7ed;      /* light cream */
+      --card: #fff;
+      --ok: #16a34a;
+      --bad: #dc2626;
+      --muted: #6b7280;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, var(--warm1), var(--warm3));
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      color: #1f2937;
+    }
+
+    .card {
+      width: min(92vw, 420px);
+      background: var(--card);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      animation: fadeIn .6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      background: linear-gradient(to right, var(--warm1), var(--warm2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.sub {
+      font-size: .95rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    label {
+      font-size: .95rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    input {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      background: #fffaf5;
+      font-size: 1rem;
+      outline: none;
+      transition: border .2s, box-shadow .2s;
+    }
+
+    input:focus {
+      border-color: var(--warm2);
+      box-shadow: 0 0 0 3px rgba(249,115,22,.25);
+    }
+
+    /* Validity colors */
+    input:required:invalid { border-color: var(--bad); }
+    input:required:valid { border-color: var(--ok); }
+
+    .hint {
+      font-size: .85rem;
+      color: var(--muted);
+    }
+    .Warn{
+          font-size: .85rem;
+      /* color: var(--muted);
+       */
+       color: var(--bad);
+       display: none;
+    }
+    .ok{
+          font-size: .85rem;
+               color: var(--ok);
+               margin-top: 15px;
+               margin-left: 100px;
+               display: none;
+    }
+    .pw-help {
+      display: none;
+      font-size: .85rem;
+      color: var(--bad);
+    }
+    #password:invalid ~ .pw-help { display: block; }
+
+    /* Button */
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--warm2), var(--warm1));
+      color: white;
+      transition: transform .1s ease, filter .2s ease;
+    }
+    button:hover { filter: brightness(1.08); }
+    button:active { transform: translateY(1px); }
+  </style>
+</head>
+<body>
+  <form class="card" novalidate>
+    <h1>Welcome Back</h1>
+    <p class="sub">Please sign in with your email and password</p>
+
+    <!-- Email -->
+    <div class="field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="you@example.com"
+        required
+        autocomplete="email"
+        title="Enter a valid email address" />
+      <div class="hint">Example: name@domain.com</div>
+      <div class="Warn">Email is incorrect</div>
+    </div>
+
+    <!-- Password -->
+    <div class="field">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Enter your password"
+ 
+
+        title="At least 8 chars with uppercase, lowercase, number, and special character" />
+      <div class="hint">At least 8 characters with mixed case, number & symbol.</div>
+      <div class="Warn">Password is incorrect</div>
+      <!-- <div class="pw-help">Password doesn’t meet the rules yet.</div> -->
+    </div>
+
+    <button type="submit">Sign In</button>
+    <div class="ok">Submitted SuccessFully</div>
+  </form>
+  <script src="index.js"></script>
+</body>
+</html>
