@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glassmorphism Download Simulation</title>
+  <style>
+    /* === GLOBAL === */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #6faec6, #72d5e8, #f97316, #facc15);
+      background-size: 300% 300%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* === GLASS CARD === */
+    .card {
+      width: min(90vw, 420px);
+      padding: 30px;
+      border-radius: 22px;
+      background: rgba(122, 136, 245, 0.868);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      text-align: center;
+      color: #1b1313;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ffedd5, #fff, #fde68a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* === PROGRESS BAR === */
+    .progress-container {
+      width: 100%;
+      height: 16px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .progress {
+      height: 100%;
+      width: 10%; /* tu isko animate kar sakta hai JS ya CSS se */
+      background: linear-gradient(90deg, #facc15, #f97316, #ef4444);
+      border-radius: inherit;
+    }
+
+    /* === STATUS TEXT === */
+    .status {
+      font-size: 1rem;
+      margin: 15px 0;
+      color: #fefce8;
+      font-weight: 500;
+      letter-spacing: .5px;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Download Simulation</h1>
+    <div class="progress-container">
+      <div class="progress"></div>
+    </div>
+    <div class="status"> Progress  0% </div>
+    <!-- <button>Cancel</button> -->
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
